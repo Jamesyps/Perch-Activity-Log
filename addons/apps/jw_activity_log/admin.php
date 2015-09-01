@@ -11,3 +11,5 @@ $this->add_setting('jw_activity_log_prune_time', 'Prune logs after', 'select', 9
     array('label' => '6 Months', 'value' => 180),
     array('label' => '1 Year',   'value' => 365) // Leap years be damned!
 ));
+
+include('listeners.php');
