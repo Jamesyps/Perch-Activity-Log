@@ -1,0 +1,11 @@
+/*
+
+!/addons
+/addons/*
+
+!/addons/apps
+/addons/apps/*
+
+!/addons/apps/jw_activity_log
+
+!.gitignore
