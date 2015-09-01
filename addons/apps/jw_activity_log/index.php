@@ -3,16 +3,24 @@
 // Perch API
 $API = new PerchAPI(1.0, 'jw_activity_log');
 
+// Actions
+include('JwActivityLog_Actions.class.php');
+include('JwActivityLog_Action.class.php');
+
 // Language instance
 $Lang = $API->get('Lang');
 
 // Page Meta
 $Perch->page_title = $Lang->get('Activity Log');
 
+// Page Initialising
+include('modes/log.pre.php');
+
 // Perch Frame
 include(PERCH_CORE . '/inc/top.php');
 
-// App Page
+// Page
+include('modes/log.post.php');
 
 // Perch Frame
 include(PERCH_CORE . '/inc/btm.php');

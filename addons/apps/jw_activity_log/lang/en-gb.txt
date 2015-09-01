@@ -1,0 +1,5 @@
+{
+    "lang": "en-gb",
+    "Activity Log": "Activity Log",
+    "There has not yet been any activity": "There has not yet been any activity"
+}
