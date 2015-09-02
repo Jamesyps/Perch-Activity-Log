@@ -15,3 +15,84 @@
     display: inline-block;
     vertical-align: bottom;
 }
+
+.Differences {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid #EAEAEA;
+    empty-cells: show;
+}
+
+.Differences thead th {
+    text-align: left;
+    border-bottom: 1px solid #EAEAEA;
+    background: #FCFCFC;
+    color: #000;
+    padding: 10px;
+}
+.Differences tbody th {
+    text-align: center;
+    background: #FCFCFC;
+    border-right: 1px solid #EAEAEA;
+    width: 3%;
+    padding: 1px 2px;
+    vertical-align: middle;
+    font-size: 13px;
+}
+
+.Differences td {
+    padding: 2px 5px;
+    font-family: Consolas, monospace;
+    font-size: 13px;
+}
+
+.Differences td.Left,
+.Differences td.Right {
+    width: 44%;
+}
+
+.Differences td.Left {
+    border-right: 1px solid #EAEAEA;
+}
+
+.DifferencesSideBySide .ChangeInsert td.Left {
+    background: #dfd;
+}
+
+.DifferencesSideBySide .ChangeInsert td.Right {
+    background: #cfc;
+}
+
+.DifferencesSideBySide .ChangeDelete td.Left {
+    background: #f88;
+}
+
+.DifferencesSideBySide .ChangeDelete td.Right {
+    background: #faa;
+}
+
+.DifferencesSideBySide .ChangeReplace .Left {
+    background: #fe9;
+}
+
+.DifferencesSideBySide .ChangeReplace .Right {
+    background: #fd8;
+}
+
+.Differences ins, .Differences del {
+    text-decoration: none;
+}
+
+.DifferencesSideBySide .ChangeReplace ins, .DifferencesSideBySide .ChangeReplace del {
+    background: #fc0;
+}
+
+.Differences .Skipped {
+    background: #f7f7f7;
+}
+
+pre {
+    width: 100%;
+    overflow: auto;
+}

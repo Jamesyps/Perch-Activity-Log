@@ -1,16 +1,9 @@
 {
     "lang": "en-gb",
     "Activity Log": "Activity Log",
-    "There has not yet been any activity": "There has not yet been any activity",
+    "Activity Log - View Log": "Activity Log - View Log",
     "In the sidebar you should try and give the user guidance and tips.": "In the sidebar you should try and give the user guidance and tips.",
-    "Add Thing": "Add Thing",
-    "Recent Actions": "Recent Actions",
-    "All": "All",
-    "Action": "Action",
-    "Account": "Account",
-    "Role": "Role",
-    "Type": "Type",
-    "Title": "Title",
-    "Date \/ Time": "Date \/ Time",
-    "Details": "Details"
+    "User": "User",
+    "Region": "Region",
+    "History": "History"
 }
