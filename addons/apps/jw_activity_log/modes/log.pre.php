@@ -1,6 +1,6 @@
 <?php
 
-if ($CurrentUser->has_priv('jw_activity_log')) {
+if (!$CurrentUser->has_priv('jw_activity_log')) {
     PerchUtil::redirect(PERCH_LOGINPATH);
 }
 
