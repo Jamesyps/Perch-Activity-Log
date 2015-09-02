@@ -69,7 +69,7 @@ if (isset($message)) echo $message;
 
 
 <?php
-if(PerchUtil::count($historical_logs) > 2) {
+if((PerchUtil::count($historical_logs) > 1) && ($Action->resourceType() === LOG_REGION_TYPE)) {
 
     echo $HTML->heading1('History');
     $i = 0;

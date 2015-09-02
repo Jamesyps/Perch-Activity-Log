@@ -26,5 +26,6 @@
     "Next": "Next",
     "Prev": "Prev",
     "Preview": "Preview",
-    "URL": "URL"
+    "URL": "URL",
+    "Category": "Category"
 }
