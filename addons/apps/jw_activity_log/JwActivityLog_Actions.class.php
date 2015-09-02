@@ -1,14 +1,61 @@
 <?php
 
+/**
+ * Class JwActivityLog_Actions
+ *
+ * @author James Wigger <james.s.wigger@gmail.com>
+ */
 class JwActivityLog_Actions extends PerchAPI_Factory
 {
+    /**
+     * Log Table
+     *
+     * @var string
+     */
     protected $table = 'jw_activity_log_actions';
+
+    /**
+     * Primary Key
+     *
+     * @var string
+     */
     protected $pk = 'actionID';
 
+    /**
+     * Sort by column
+     *
+     * @var string
+     */
+    protected $default_sort_column = 'actionDateTime';
+
+    /**
+     * Sort direction
+     *
+     * @var string
+     */
+    protected $default_sort_direction = 'DESC';
+
+    /**
+     * Factory singular class
+     *
+     * @var string
+     */
     protected $singular_classname = 'JwActivityLog_Action';
 
+    /**
+     * Non dynamic fields
+     *
+     * @var array
+     */
     public $static_fields = array();
 
+    /**
+     * Insert a new log into the database, filtering sensitive information
+     * and encoding data for storage.
+     *
+     * @param array $data
+     * @return JwActivityLog_Action
+     */
     public function create($data)
     {
         // Meta data

@@ -26,8 +26,17 @@ if (isset($message)) echo $message;
     <table class="d log-table">
         <thead>
             <tr>
-                <th class="first">
+                <th class="icon">
+                    -
+                </th>
+                <th>
                     <?php echo $Lang->get('Action'); ?>
+                </th>
+                <th>
+                    <?php echo $Lang->get('Type'); ?>
+                </th>
+                <th>
+                    <?php echo $Lang->get('Title'); ?>
                 </th>
                 <th>
                     <?php echo $Lang->get('Account'); ?>
@@ -35,19 +44,36 @@ if (isset($message)) echo $message;
                 <th>
                     <?php echo $Lang->get('Role'); ?>
                 </th>
+                <th>
+                    <?php echo $Lang->get('Date / Time'); ?>
+                </th>
             </tr>
         </thead>
         <tbody>
             <?php foreach($action_logs as $Action): ?>
                 <tr>
+                    <td class="icon">
+                        <img src="<?php echo $Action->icon(); ?>" alt="<?php echo $HTML->encode($Action->actionKey()); ?>" />
+                    </td>
                     <td>
-                        <?php echo $HTML->encode($Action->actionKey()); ?>
+                        <?php echo $HTML->encode($Action->actionKeyFormat()); ?>
+                    </td>
+                    <td>
+                        <?php echo $HTML->encode(ucfirst($Action->resourceType())); ?>
+                    </td>
+                    <td>
+                        <?php echo $HTML->encode($Action->resourceTitle()); ?>
                     </td>
                     <td>
                         <?php echo $HTML->encode($Action->userData('userUsername', 'N/A')); ?>
                     </td>
                     <td>
                         <?php echo $HTML->encode($Action->userData('roleTitle', 'N/A')); ?>
+                    </td>
+                    <td>
+                        <span title="<?php echo $HTML->encode($Action->actionDateTime()); ?>">
+                            <?php echo $HTML->encode($Action->relativeTime()); ?>
+                        </span>
                     </td>
                 </tr>
             <?php endforeach; ?>

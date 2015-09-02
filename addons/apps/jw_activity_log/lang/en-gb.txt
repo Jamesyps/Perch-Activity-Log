@@ -8,5 +8,8 @@
     "All": "All",
     "Action": "Action",
     "Account": "Account",
-    "Role": "Role"
+    "Role": "Role",
+    "Type": "Type",
+    "Title": "Title",
+    "Date \/ Time": "Date \/ Time"
 }
