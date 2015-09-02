@@ -10,6 +10,9 @@ $Actions = new JwActivityLog_Actions($API);
 $action_logs = array();
 $action_logs = $Actions->all($Paging);
 
+$filter_icons = array();
+$filter_icons = $Actions->icons();
+
 // Install App
 if($action_logs == false) {
     $Actions->attempt_install();

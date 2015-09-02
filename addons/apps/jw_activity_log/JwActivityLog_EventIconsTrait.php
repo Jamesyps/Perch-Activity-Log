@@ -35,17 +35,31 @@ trait EventIcons {
      *
      * @return string
      */
-    public function icon()
+    public function icon(JwActivityLog_Action $action = null)
     {
+        $thisAction = is_null($action) ? $this : $action;
+
         if(!isset($this->iconMap[$this->actionKey()])) {
             return PerchUtil::file_path($this->api->app_path() . '/' . $this->icon_dir . '/' . 'generic' . $this->icon_ext);
         }
 
-        return PerchUtil::file_path($this->api->app_path() . '/' . $this->icon_dir . '/' . $this->iconMap[$this->actionKey()] . $this->icon_ext);
+        return PerchUtil::file_path($this->api->app_path() . '/' . $this->icon_dir . '/' . $this->iconMap[$thisAction->actionKey()] . $this->icon_ext);
     }
 
+    /**
+     * Return a list of icon files as an array
+     *
+     * @return array
+     */
     public function icons()
     {
+        $return = array();
 
+        foreach($this->iconMap as $filename)
+        {
+            $return[] = PerchUtil::file_path($this->api->app_path() . '/' . $this->icon_dir . '/' . $filename . $this->icon_ext);
+        }
+
+        return $return;
     }
 }
