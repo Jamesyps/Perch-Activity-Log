@@ -92,12 +92,18 @@ class JwActivityLog_Action extends PerchAPI_Base
         return $default;
     }
 
+    /**
+     * Fetch previous
+     *
+     * @return array
+     */
     public function history()
     {
         $sql = "
         SELECT * FROM " . $this->table .
         " WHERE `resourceType` = " . $this->db->pdb($this->resourceType()) .
         " AND `resourceID` = " . $this->db->pdb($this->resourceID()) .
+        " AND `actionDateTime` <= " . $this->db->pdb($this->actionDateTime()) .
         " ORDER BY `actionDateTime` DESC";
 
         $result = $this->db->get_rows($sql);

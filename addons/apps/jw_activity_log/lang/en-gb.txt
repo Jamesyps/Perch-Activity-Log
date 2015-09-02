@@ -5,5 +5,21 @@
     "In the sidebar you should try and give the user guidance and tips.": "In the sidebar you should try and give the user guidance and tips.",
     "User": "User",
     "Region": "Region",
-    "History": "History"
+    "History": "History",
+    "Recent Actions": "Recent Actions",
+    "All": "All",
+    "Action": "Action",
+    "Type": "Type",
+    "Title": "Title",
+    "Account": "Account",
+    "Role": "Role",
+    "Date \/ Time": "Date \/ Time",
+    "Details": "Details",
+    "Prune logs after": "Prune logs after",
+    "1 Week": "1 Week",
+    "2 Weeks": "2 Weeks",
+    "1 Month": "1 Month",
+    "3 Months": "3 Months",
+    "6 Months": "6 Months",
+    "1 Year": "1 Year"
 }

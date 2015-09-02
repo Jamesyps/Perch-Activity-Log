@@ -20,7 +20,7 @@ if (isset($message)) echo $message;
 <?php echo $HTML->heading1(ucfirst($Action->resourceType())); ?>
 
 <?php
-if(PerchUtil::count($historical_logs)) {
+if(PerchUtil::count($historical_logs) > 2) {
 
     echo $HTML->heading1('History');
     $i = 0;
