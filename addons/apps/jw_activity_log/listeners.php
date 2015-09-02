@@ -11,6 +11,29 @@ $Actions = new JwActivityLog_Actions($API);
 /**
  * Regions
  */
+$API->on('region.add_item', function(PerchSystemEvent $Event) use($Actions) {
+    $data = array();
+    $user = $Event->user->to_array();
+    $subject = $Event->subject->to_array();
+
+    $data['actionKey'] = $Event->event;
+
+    $data['userAccountID'] = $user['userID'];
+    $data['userAccountData'] = $user;
+
+    $data['resourceType'] = LOG_REGION_TYPE;
+    $data['resourceID'] = $subject['regionID'];
+    $data['resourceTitle'] = $subject['regionKey'];
+    $data['resourceModification'] = $subject['regionHTML'];
+
+    // Save
+    $Actions->create($data);
+
+    // Debug
+    PerchUtil::debug('Inserting new action log data:');
+    PerchUtil::debug($data);
+});
+
 $API->on('region.publish', function(PerchSystemEvent $Event) use($Actions) {
     $data = array();
     $user = $Event->user->to_array();
@@ -25,6 +48,32 @@ $API->on('region.publish', function(PerchSystemEvent $Event) use($Actions) {
     $data['resourceID'] = $subject['regionID'];
     $data['resourceTitle'] = $subject['regionKey'];
     $data['resourceModification'] = $subject['regionHTML'];
+
+    // Save
+    $Actions->create($data);
+
+    // Debug
+    PerchUtil::debug('Inserting new action log data:');
+    PerchUtil::debug($data);
+});
+
+/**
+ * Items
+ */
+$API->on('item.delete', function(PerchSystemEvent $Event) use($Actions) {
+    $data = array();
+    $user = $Event->user->to_array();
+    $subject = $Event->subject->to_array();
+
+    $data['actionKey'] = $Event->event;
+
+    $data['userAccountID'] = $user['userID'];
+    $data['userAccountData'] = $user;
+
+    $data['resourceType'] = LOG_ITEM_TYPE;
+    $data['resourceID'] = $subject['itemID'];
+    $data['resourceTitle'] = 'Item ID #' . $subject['itemID'];
+    $data['resourceModification'] = null;
 
     // Save
     $Actions->create($data);
@@ -87,9 +136,6 @@ $API->on('category.update', function(PerchSystemEvent $Event) use($Actions) {
  * Assets
  */
 $API->on('assets.create_image', function(PerchSystemEvent $Event) use($Actions) {
-
-    var_dump($Event);
-
     $data = array();
     $user = $Event->user->to_array();
     $subject = $Event->subject->to_array();

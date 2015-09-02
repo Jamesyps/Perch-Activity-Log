@@ -44,6 +44,7 @@ class JwActivityLog_Action extends PerchAPI_Base
         'region.create'       => 'region_create',
         'region.add_item'     => 'region_add_item',
         'region.publish'      => 'region_publish',
+        'item.delete'         => 'item_delete',
         'category.create'     => 'category_create',
         'category.update'     => 'category_update',
         'assets.create_image' => 'assets_create_image'
@@ -70,7 +71,7 @@ class JwActivityLog_Action extends PerchAPI_Base
      */
     public function actionKeyFormat()
     {
-        return ucwords(str_replace('.', ' ', $this->actionKey()));
+        return ucwords(str_replace(array('.', '_'), ' ', $this->actionKey()));
     }
 
     /**

@@ -64,8 +64,10 @@ if (isset($message)) echo $message;
     </tbody>
 </table>
 
-<?php echo $HTML->heading1('Preview'); ?>
-<pre class="log-preview"><?php echo $HTML->encode($Action->resourceModification()); ?></pre>
+<?php if($Action->resourceModification()): ?>
+    <?php echo $HTML->heading1('Preview'); ?>
+    <pre class="log-preview"><?php echo $HTML->encode($Action->resourceModification()); ?></pre>
+<?php endif; ?>
 
 
 <?php

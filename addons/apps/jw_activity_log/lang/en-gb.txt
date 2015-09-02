@@ -27,5 +27,7 @@
     "Prev": "Prev",
     "Preview": "Preview",
     "URL": "URL",
-    "Category": "Category"
+    "Category": "Category",
+    "Item": "Item",
+    "Asset": "Asset"
 }

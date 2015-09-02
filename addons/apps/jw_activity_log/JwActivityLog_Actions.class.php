@@ -60,7 +60,7 @@ class JwActivityLog_Actions extends PerchAPI_Factory
     {
         // Meta data
         $data['actionDateTime'] = date("Y-m-d H:i:s");
-        $data['resourceUrl'] = $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'] . $_SERVER['QUERY_STRING'];
+        $data['resourceUrl'] = $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'] . '?=' . $_SERVER['QUERY_STRING'];
 
         // Remove sensitive information
         if(isset($data['userAccountData']['userPassword'])) unset($data['userAccountData']['userPassword']);
