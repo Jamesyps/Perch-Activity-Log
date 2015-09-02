@@ -1,5 +1,12 @@
 {
     "lang": "en-gb",
     "Activity Log": "Activity Log",
-    "There has not yet been any activity": "There has not yet been any activity"
+    "There has not yet been any activity": "There has not yet been any activity",
+    "In the sidebar you should try and give the user guidance and tips.": "In the sidebar you should try and give the user guidance and tips.",
+    "Add Thing": "Add Thing",
+    "Recent Actions": "Recent Actions",
+    "All": "All",
+    "Action": "Action",
+    "Account": "Account",
+    "Role": "Role"
 }

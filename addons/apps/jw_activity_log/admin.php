@@ -12,4 +12,8 @@ $this->add_setting('jw_activity_log_prune_time', 'Prune logs after', 'select', 9
     array('label' => '1 Year',   'value' => 365) // Leap years be damned!
 ));
 
+define('LOG_REGION_TYPE', 'region');
+define('LOG_CATEGORY_TYPE', 'category');
+define('LOG_ASSET_TYPE', 'asset');
+
 include('listeners.php');
