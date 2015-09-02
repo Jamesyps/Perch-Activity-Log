@@ -1,5 +1,9 @@
 <?php
 
+if (!$CurrentUser->has_priv('jw_activity_log')) {
+    PerchUtil::redirect(PERCH_LOGINPATH);
+}
+
 // Diff library
 require_once('../lib/Diff.php');
 require_once('../lib/Diff/Renderer/Html/SideBySide.php');

@@ -1,5 +1,9 @@
 <?php
 
+if ($CurrentUser->has_priv('jw_activity_log')) {
+    PerchUtil::redirect(PERCH_LOGINPATH);
+}
+
 $HTML = $API->get('HTML');
 $Form = $API->get('Form');
 

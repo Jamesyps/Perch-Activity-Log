@@ -28,6 +28,10 @@ foreach($statements as $statement) {
     if($statement != '') $this->db->execute($statement);
 }
 
+$API = new PerchAPI(1.0, 'jw_activity_log');
+$UserPrivileges = $API->get('UserPrivileges');
+$UserPrivileges->create_privilege('jw_activity_log', 'Access the activity log');
+
 $sql = 'SHOW TABLES LIKE "'. $this->table .'"';
 $result = $this->db->get_value($sql);
 
