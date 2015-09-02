@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Class EventIcons
+ *
+ * @author James Wigger <james.s.wigger@gmail.com>
+ */
 trait EventIcons {
     /**
      * Directory for icon files
