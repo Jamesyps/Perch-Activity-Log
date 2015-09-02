@@ -16,6 +16,17 @@
     vertical-align: bottom;
 }
 
+.diff-table {
+
+}
+
+.log-preview {
+    background-color: #F8F8F8;
+    padding: 20px;
+    width: auto;
+    margin-bottom: 25px;
+}
+
 .Differences {
     width: 100%;
     border-collapse: collapse;

@@ -16,8 +16,57 @@ if (isset($message)) echo $message;
 
 ?>
 
-<?php echo $HTML->heading1('User'); ?>
+<?php if(PerchUtil::count($user)): ?>
+    <?php echo $HTML->heading1('User'); ?>
+    <table class="d">
+        <thead>
+            <tr>
+                <?php foreach(array_keys($user) as $userPropertyKey): ?>
+                    <th>
+                        <?php echo $HTML->encode($userPropertyKey); ?>
+                    </th>
+                <?php endforeach; ?>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <?php foreach($user as $userProperty): ?>
+                    <th>
+                        <?php echo $HTML->encode($userProperty); ?>
+                    </th>
+                <?php endforeach; ?>
+            </tr>
+        </tbody>
+    </table>
+<?php endif; ?>
+
 <?php echo $HTML->heading1(ucfirst($Action->resourceType())); ?>
+<table class="d">
+    <thead>
+        <tr>
+            <th>
+                <?php echo $Lang->get('Title'); ?>
+            </th>
+            <th>
+                <?php echo $Lang->get('URL'); ?>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <?php echo $HTML->encode($Action->resourceTitle()); ?>
+            </td>
+            <td>
+                <pre><?php echo $HTML->encode($Action->resourceUrl()); ?></pre>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<?php echo $HTML->heading1('Preview'); ?>
+<pre class="log-preview"><?php echo $HTML->encode($Action->resourceModification()); ?></pre>
+
 
 <?php
 if(PerchUtil::count($historical_logs) > 2) {
@@ -26,15 +75,23 @@ if(PerchUtil::count($historical_logs) > 2) {
     $i = 0;
 
     foreach($historical_logs as $History) {
-        if(($i > 0) && ($i < count($historical_logs) - 1)) {
+        if(isset($historical_logs[$i - 1])) {
             $a = explode("\n", $History->resourceModification());
             $b = explode("\n", $historical_logs[$i - 1]->resourceModification());
 
             $diff = new Diff($a, $b);
             $renderer = new Diff_Renderer_Html_SideBySide;
+            $html = $diff->Render($renderer);
 
-            echo '<h2>' . $HTML->encode($Action->relativeTime() . ' by ' . $Action->userData('userUsername', 'N/A')) . '</h2>';
-            echo $diff->Render($renderer);
+            if($html)
+            {
+                echo '<div class="diff-table">';
+                echo '<h2>' . $HTML->encode($Action->relativeTime() . ' by ' . $Action->userProperty('userUsername',
+                            'N/A')) . '</h2>';
+                echo $html;
+                echo '</div>';
+            }
+
         }
 
         $i++;

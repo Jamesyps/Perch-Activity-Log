@@ -74,14 +74,31 @@ class JwActivityLog_Action extends PerchAPI_Base
     }
 
     /**
-     * Return data from the userAccountData json store
+     * Return associated user data as array
+     *
+     * @param array $except
+     * @return array
+     */
+    public function userData(array $except = array())
+    {
+        $accountData = PerchUtil::json_safe_decode($this->userAccountData(), true);
+
+        foreach($except as $removeKey) {
+            unset($accountData[$removeKey]);
+        }
+
+        return $accountData;
+    }
+
+    /**
+     * Return property from the userAccountData json store
      * with an optional default for missing values
      *
      * @param $key
      * @param null $default
      * @return null
      */
-    public function userData($key, $default = null)
+    public function userProperty($key, $default = null)
     {
         $accountData = PerchUtil::json_safe_decode($this->userAccountData(), true);
 

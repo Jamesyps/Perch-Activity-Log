@@ -24,5 +24,7 @@
     "1 Year": "1 Year",
     "Page %s of %s": "Page %s of %s",
     "Next": "Next",
-    "Prev": "Prev"
+    "Prev": "Prev",
+    "Preview": "Preview",
+    "URL": "URL"
 }

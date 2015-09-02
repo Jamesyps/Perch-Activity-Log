@@ -64,10 +64,10 @@ if (isset($message)) echo $message;
                         <?php echo $HTML->encode($Action->resourceTitle()); ?>
                     </td>
                     <td>
-                        <?php echo $HTML->encode($Action->userData('userUsername', 'N/A')); ?>
+                        <?php echo $HTML->encode($Action->userProperty('userUsername', 'N/A')); ?>
                     </td>
                     <td>
-                        <?php echo $HTML->encode($Action->userData('roleTitle', 'N/A')); ?>
+                        <?php echo $HTML->encode($Action->userProperty('roleTitle', 'N/A')); ?>
                     </td>
                     <td>
                         <span title="<?php echo $HTML->encode($Action->actionDateTime()); ?>">

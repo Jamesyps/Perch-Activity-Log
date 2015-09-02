@@ -12,12 +12,24 @@ $message = false;
 
 $HTML = $API->get('HTML');
 
+// Setup data
+$historical_logs = array();
+$user = array();
+$resource = array();
+
 if (isset($_GET['id']) && $_GET['id']!='') {
     $actionID = (int) $_GET['id'];
     $Action = $Actions->find($actionID);
-    $details = $Action->to_array();
 
     $historical_logs = $Actions->return_instances($Action->history());
+
+    $user = $Action->userData(array(
+        'userLastLogin',
+        'userCreated',
+        'userUpdated',
+        'roleID',
+        'roleSlug'
+    ));
 
     $heading1 = 'View Log #' . $actionID;
 }
