@@ -1,6 +1,6 @@
 <?php
 
-$this->register_app('jw_activity_log', 'Activity Log', 1, 'Track perch events to track user activity', '1.0.0');
+$this->register_app('jw_activity_log', 'Activity&nbsp;Log', 1, 'Track perch events to track user activity', '1.0.0');
 $this->require_version('jw_activity_log', '2.6');
 
 $this->add_setting('jw_activity_log_prune_time', 'Prune logs after', 'select', 90, array(

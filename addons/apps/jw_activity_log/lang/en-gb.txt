@@ -32,5 +32,6 @@
     "Asset": "Asset",
     "There has not yet been any activity": "There has not yet been any activity",
     "Go": "Go",
-    "Access the activity log": "Access the activity log"
+    "Access the activity log": "Access the activity log",
+    "Activity&nbsp;Log": "Activity&nbsp;Log"
 }
