@@ -4,7 +4,7 @@ $HTML = $API->get('HTML');
 $Form = $API->get('Form');
 
 $Paging = $API->get('Paging');
-$Paging->set_per_page(15);
+$Paging->set_per_page(20);
 
 $Actions = new JwActivityLog_Actions($API);
 

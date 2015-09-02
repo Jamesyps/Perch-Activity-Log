@@ -7,7 +7,6 @@ $API = new PerchAPI(1.0, 'jw_activity_log');
 include_once('JwActivityLog_Actions.class.php');
 include_once('JwActivityLog_Action.class.php');
 
-
 // Language instance
 $Lang = $API->get('Lang');
 
