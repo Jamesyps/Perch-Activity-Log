@@ -11,5 +11,6 @@
     "Role": "Role",
     "Type": "Type",
     "Title": "Title",
-    "Date \/ Time": "Date \/ Time"
+    "Date \/ Time": "Date \/ Time",
+    "Details": "Details"
 }

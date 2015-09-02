@@ -45,6 +45,7 @@ if (isset($message)) echo $message;
                 <th>
                     <?php echo $Lang->get('Date / Time'); ?>
                 </th>
+                <th class="action last">&nbsp;</th>
             </tr>
         </thead>
         <tbody>
@@ -72,6 +73,11 @@ if (isset($message)) echo $message;
                         <span title="<?php echo $HTML->encode($Action->actionDateTime()); ?>">
                             <?php echo $HTML->encode($Action->relativeTime()); ?>
                         </span>
+                    </td>
+                    <td>
+                        <a class="action" href="<?php echo $HTML->encode($API->app_path()); ?>/view/?id=<?php echo $HTML->encode(urlencode($Action->id())); ?>">
+                            <?php echo $Lang->get('Details'); ?>
+                        </a>
                     </td>
                 </tr>
             <?php endforeach; ?>
