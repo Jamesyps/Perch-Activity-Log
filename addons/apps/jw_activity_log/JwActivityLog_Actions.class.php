@@ -74,6 +74,12 @@ class JwActivityLog_Actions extends PerchAPI_Factory
         return parent::create($data);
     }
 
+    /**
+     * Fetch the unique stored users from the database and
+     * decode the stored user data.
+     *
+     * @return array
+     */
     public function get_stored_users_unique()
     {
         $return = array();
@@ -90,5 +96,24 @@ class JwActivityLog_Actions extends PerchAPI_Factory
         }
 
         return $return;
+    }
+
+    /**
+     * Delete records older than $days from the database
+     *
+     * @param int $days
+     * @return int
+     */
+    public function prune_logs($days)
+    {
+        $total_sql = "SELECT COUNT(*) FROM " . $this->table . " WHERE `ActionDateTime` < DATE_SUB('". date('Y-m-d') ."', INTERVAL ". $days ." DAY)";
+        $total = $this->db->get_count($total_sql);
+
+        echo $total_sql;
+
+        $prune_sql = "DELETE FROM " . $this->table . " WHERE `ActionDateTime` < DATE_SUB('". date('Y-m-d') ."', INTERVAL ". $days ." DAY)";
+        $this->db->execute($prune_sql);
+
+        return $total;
     }
 }
