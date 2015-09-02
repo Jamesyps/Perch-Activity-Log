@@ -21,8 +21,8 @@ $historical_logs = array();
 $user = array();
 $resource = array();
 
-if (isset($_GET['id']) && $_GET['id']!='') {
-    $actionID = (int) $_GET['id'];
+if (isset($_GET['id']) && $_GET['id'] != '') {
+    $actionID = (int)$_GET['id'];
     $Action = $Actions->find($actionID);
 
     $historical_logs = $Actions->return_instances($Action->history());

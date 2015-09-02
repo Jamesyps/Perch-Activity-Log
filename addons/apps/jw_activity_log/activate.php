@@ -1,4 +1,8 @@
-<?php if(!defined('PERCH_DB_PREFIX')) exit;
+<?php
+
+if (!defined('PERCH_DB_PREFIX')) {
+    exit;
+}
 
 // Create tables
 $sql = "
@@ -23,16 +27,18 @@ $sql = str_replace('__PREFIX__', PERCH_DB_PREFIX, $sql);
 
 // Install
 $statements = explode(';', $sql);
-foreach($statements as $statement) {
+foreach ($statements as $statement) {
     $statement = trim($statement);
-    if($statement != '') $this->db->execute($statement);
+    if ($statement != '') {
+        $this->db->execute($statement);
+    }
 }
 
 $API = new PerchAPI(1.0, 'jw_activity_log');
 $UserPrivileges = $API->get('UserPrivileges');
 $UserPrivileges->create_privilege('jw_activity_log', 'Access the activity log');
 
-$sql = 'SHOW TABLES LIKE "'. $this->table .'"';
+$sql = 'SHOW TABLES LIKE "' . $this->table . '"';
 $result = $this->db->get_value($sql);
 
 return $result;

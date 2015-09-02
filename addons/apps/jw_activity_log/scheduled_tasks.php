@@ -11,10 +11,10 @@ function jw_activity_log_prune($last_run_date)
     $Settings = $API->get('Settings');
     $Actions = new JwActivityLog_Actions($API);
 
-    $total_pruned = $Actions->prune_logs((int) $Settings->get('jw_activity_log_prune_time')->settingValue());
+    $total_pruned = $Actions->prune_logs((int)$Settings->get('jw_activity_log_prune_time')->settingValue());
 
     return array(
-        'result' => 'OK',
+        'result'  => 'OK',
         'message' => $total_pruned . ' logs pruned'
     );
 }

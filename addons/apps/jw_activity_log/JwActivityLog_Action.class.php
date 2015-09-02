@@ -43,7 +43,7 @@ class JwActivityLog_Action extends PerchAPI_Base
     {
         $accountData = PerchUtil::json_safe_decode($this->userAccountData(), true);
 
-        foreach($except as $removeKey) {
+        foreach ($except as $removeKey) {
             unset($accountData[$removeKey]);
         }
 
@@ -79,10 +79,10 @@ class JwActivityLog_Action extends PerchAPI_Base
     {
         $sql = "
         SELECT * FROM " . $this->table .
-        " WHERE `resourceType` = " . $this->db->pdb($this->resourceType()) .
-        " AND `resourceID` = " . $this->db->pdb($this->resourceID()) .
-        " AND `actionDateTime` <= " . $this->db->pdb($this->actionDateTime()) .
-        " ORDER BY `actionDateTime` DESC";
+            " WHERE `resourceType` = " . $this->db->pdb($this->resourceType()) .
+            " AND `resourceID` = " . $this->db->pdb($this->resourceID()) .
+            " AND `actionDateTime` <= " . $this->db->pdb($this->actionDateTime()) .
+            " ORDER BY `actionDateTime` DESC";
 
         $result = $this->db->get_rows($sql);
 

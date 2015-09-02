@@ -5,7 +5,8 @@
  *
  * @author James Wigger <james.s.wigger@gmail.com>
  */
-trait EventIcons {
+trait EventIcons
+{
     /**
      * Directory for icon files
      *
@@ -43,7 +44,7 @@ trait EventIcons {
     {
         $thisAction = is_null($action) ? $this : $action;
 
-        if(!isset($this->iconMap[$this->actionKey()])) {
+        if (!isset($this->iconMap[$this->actionKey()])) {
             return PerchUtil::file_path($this->api->app_path() . '/' . $this->icon_dir . '/' . 'generic' . $this->icon_ext);
         }
 
@@ -59,8 +60,7 @@ trait EventIcons {
     {
         $return = array();
 
-        foreach($this->iconMap as $event => $filename)
-        {
+        foreach ($this->iconMap as $event => $filename) {
             $return[$event] = PerchUtil::file_path($this->api->app_path() . '/' . $this->icon_dir . '/' . $filename . $this->icon_ext);
         }
 

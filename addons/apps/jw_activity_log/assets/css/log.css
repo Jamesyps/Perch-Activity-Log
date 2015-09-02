@@ -67,6 +67,7 @@
     color: #000;
     padding: 10px;
 }
+
 .Differences tbody th {
     text-align: center;
     background: #FCFCFC;
@@ -93,27 +94,27 @@
 }
 
 .DifferencesSideBySide .ChangeInsert td.Left {
-    background: #dfd;
+    background: #DFD;
 }
 
 .DifferencesSideBySide .ChangeInsert td.Right {
-    background: #cfc;
+    background: #CFC;
 }
 
 .DifferencesSideBySide .ChangeDelete td.Left {
-    background: #f88;
+    background: #F88;
 }
 
 .DifferencesSideBySide .ChangeDelete td.Right {
-    background: #faa;
+    background: #FAA;
 }
 
 .DifferencesSideBySide .ChangeReplace .Left {
-    background: #fe9;
+    background: #FE9;
 }
 
 .DifferencesSideBySide .ChangeReplace .Right {
-    background: #fd8;
+    background: #FD8;
 }
 
 .Differences ins, .Differences del {
@@ -121,11 +122,11 @@
 }
 
 .DifferencesSideBySide .ChangeReplace ins, .DifferencesSideBySide .ChangeReplace del {
-    background: #fc0;
+    background: #FC0;
 }
 
 .Differences .Skipped {
-    background: #f7f7f7;
+    background: #F7F7F7;
 }
 
 pre {

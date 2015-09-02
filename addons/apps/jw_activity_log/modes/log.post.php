@@ -16,11 +16,12 @@ echo $HTML->heading1('Recent Actions');
 
 <div class="jw-activity-log">
     <ul class="smartbar">
-        <li class="<?php if($filter == '*'): ?>selected<?php endif; ?>"><a href="<?php echo PerchUtil::html($API->app_path()); ?>"><?php echo $Lang->get('All'); ?></a></li>
+        <li class="<?php if ($filter == '*'): ?>selected<?php endif; ?>"><a
+                href="<?php echo PerchUtil::html($API->app_path()); ?>"><?php echo $Lang->get('All'); ?></a></li>
 
-        <?php if(PerchUtil::count($filter_icons)): ?>
-            <?php foreach($filter_icons as $event => $filename): ?>
-                <li class="filter-icon <?php if(isset($type) && $type == $event): ?>selected<?php endif; ?>">
+        <?php if (PerchUtil::count($filter_icons)): ?>
+            <?php foreach ($filter_icons as $event => $filename): ?>
+                <li class="filter-icon <?php if (isset($type) && $type == $event): ?>selected<?php endif; ?>">
                     <a href="?type=<?php echo $HTML->encode($event); ?>">
                         <img src="<?php echo $filename; ?>" alt="<?php echo $HTML->encode($event); ?>" />
                     </a>
@@ -28,19 +29,22 @@ echo $HTML->heading1('Recent Actions');
             <?php endforeach; ?>
         <?php endif; ?>
 
-        <?php if(PerchUtil::count($filter_users)): ?>
-        <li class="fin user-filter">
-            <form action="./" method="GET">
-                <?php echo $Form->select_field('user', 'User', $filter_users_opts, isset($userID) ? $userID : false); ?>
-                <button type="submit"><?php echo $Lang->get('Go'); ?></button>
-            </form>
-        </li>
+        <?php if (PerchUtil::count($filter_users)): ?>
+            <li class="fin user-filter">
+                <form action="./" method="GET">
+                    <?php echo $Form->select_field('user', 'User', $filter_users_opts,
+                        isset($userID) ? $userID : false); ?>
+                    <button type="submit"><?php echo $Lang->get('Go'); ?></button>
+                </form>
+            </li>
         <?php endif; ?>
     </ul>
 
-    <?php if(isset($message)) echo $message; ?>
+    <?php if (isset($message)) {
+        echo $message;
+    } ?>
 
-    <?php if(PerchUtil::count($action_logs)): ?>
+    <?php if (PerchUtil::count($action_logs)): ?>
         <table class="d log-table">
             <thead>
                 <tr>
@@ -67,10 +71,11 @@ echo $HTML->heading1('Recent Actions');
                 </tr>
             </thead>
             <tbody>
-                <?php foreach($action_logs as $Action): ?>
+                <?php foreach ($action_logs as $Action): ?>
                     <tr>
                         <td class="icon">
-                            <img src="<?php echo $Action->icon(); ?>" alt="<?php echo $HTML->encode($Action->actionKey()); ?>" />
+                            <img src="<?php echo $Action->icon(); ?>"
+                                 alt="<?php echo $HTML->encode($Action->actionKey()); ?>" />
                         </td>
                         <td>
                             <?php echo $HTML->encode($Action->actionKeyFormat()); ?>
@@ -93,7 +98,8 @@ echo $HTML->heading1('Recent Actions');
                             </span>
                         </td>
                         <td>
-                            <a class="action" href="<?php echo $HTML->encode($API->app_path()); ?>/view/?id=<?php echo $HTML->encode(urlencode($Action->id())); ?>">
+                            <a class="action"
+                               href="<?php echo $HTML->encode($API->app_path()); ?>/view/?id=<?php echo $HTML->encode(urlencode($Action->id())); ?>">
                                 <?php echo $Lang->get('Details'); ?>
                             </a>
                         </td>

@@ -19,10 +19,8 @@ $filter_users = array();
 $filter_users_opts = array();
 $filter_users = $Actions->get_stored_users_unique();
 
-if(PerchUtil::count($filter_users))
-{
-    foreach($filter_users as $filter_user)
-    {
+if (PerchUtil::count($filter_users)) {
+    foreach ($filter_users as $filter_user) {
         $filter_users_opts[] = array(
             'label' => $filter_user['userUsername'],
             'value' => $filter_user['userID']
@@ -33,18 +31,17 @@ if(PerchUtil::count($filter_users))
 $action_logs = array();
 $filter = '*';
 
-if(isset($_GET['type']) && $_GET['type']) {
+if (isset($_GET['type']) && $_GET['type']) {
     $filter = 'type';
     $type = $_GET['type'];
 }
 
-if(isset($_GET['user']) && $_GET['user']) {
+if (isset($_GET['user']) && $_GET['user']) {
     $filter = 'user';
     $userID = $_GET['user'];
 }
 
-switch($filter)
-{
+switch ($filter) {
     case 'type':
         $action_logs = $Actions->get_by('actionKey', $type, false, $Paging);
         break;
@@ -57,7 +54,7 @@ switch($filter)
 }
 
 // Install App
-if($action_logs == false) {
+if ($action_logs == false) {
     $Actions->attempt_install();
     $message = $HTML->warning_message('There has not yet been any activity');
 }

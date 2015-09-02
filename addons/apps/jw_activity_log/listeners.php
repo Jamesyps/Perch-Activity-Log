@@ -10,7 +10,7 @@ $Actions = new JwActivityLog_Actions($API);
 /**
  * Regions
  */
-$API->on('region.add_item', function(PerchSystemEvent $Event) use($Actions) {
+$API->on('region.add_item', function (PerchSystemEvent $Event) use ($Actions) {
     $data = array();
     $user = $Event->user->to_array();
     $subject = $Event->subject->to_array();
@@ -33,7 +33,7 @@ $API->on('region.add_item', function(PerchSystemEvent $Event) use($Actions) {
     PerchUtil::debug($data);
 });
 
-$API->on('region.publish', function(PerchSystemEvent $Event) use($Actions) {
+$API->on('region.publish', function (PerchSystemEvent $Event) use ($Actions) {
     $data = array();
     $user = $Event->user->to_array();
     $subject = $Event->subject->to_array();
@@ -59,7 +59,7 @@ $API->on('region.publish', function(PerchSystemEvent $Event) use($Actions) {
 /**
  * Items
  */
-$API->on('item.delete', function(PerchSystemEvent $Event) use($Actions) {
+$API->on('item.delete', function (PerchSystemEvent $Event) use ($Actions) {
     $data = array();
     $user = $Event->user->to_array();
     $subject = $Event->subject->to_array();
@@ -85,7 +85,7 @@ $API->on('item.delete', function(PerchSystemEvent $Event) use($Actions) {
 /**
  * Categories
  */
-$API->on('category.create', function(PerchSystemEvent $Event) use($Actions) {
+$API->on('category.create', function (PerchSystemEvent $Event) use ($Actions) {
     $data = array();
     $user = $Event->user->to_array();
     $subject = $Event->subject->to_array();
@@ -108,7 +108,7 @@ $API->on('category.create', function(PerchSystemEvent $Event) use($Actions) {
     PerchUtil::debug($data);
 });
 
-$API->on('category.update', function(PerchSystemEvent $Event) use($Actions) {
+$API->on('category.update', function (PerchSystemEvent $Event) use ($Actions) {
     $data = array();
     $user = $Event->user->to_array();
     $subject = $Event->subject->to_array();
@@ -134,7 +134,7 @@ $API->on('category.update', function(PerchSystemEvent $Event) use($Actions) {
 /**
  * Assets
  */
-$API->on('assets.create_image', function(PerchSystemEvent $Event) use($Actions) {
+$API->on('assets.create_image', function (PerchSystemEvent $Event) use ($Actions) {
     $data = array();
     $user = $Event->user->to_array();
     $subject = $Event->subject->to_array();
@@ -157,7 +157,7 @@ $API->on('assets.create_image', function(PerchSystemEvent $Event) use($Actions) 
     PerchUtil::debug($data);
 });
 
-if(defined('PERCH_DEBUG') && PERCH_DEBUG) {
+if (defined('PERCH_DEBUG') && PERCH_DEBUG) {
     $API->on('*', function (PerchSystemEvent $Event) use ($Actions) {
         PerchUtil::debug($Event->event);
     });
