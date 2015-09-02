@@ -14,7 +14,10 @@ CREATE TABLE IF NOT EXISTS `__PREFIX__jw_activity_log_actions` (
   `resourceModification` text,
   `resourceUrl` varchar(255) NOT NULL,
   PRIMARY KEY(`actionID`)
-) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;";
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
+
+INSERT INTO `__PREFIX__settings` (`settingID`, `userID`, `settingValue`)
+VALUES ('jw_activity_log_prune_time', 0, 30);";
 
 $sql = str_replace('__PREFIX__', PERCH_DB_PREFIX, $sql);
 
