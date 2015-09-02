@@ -85,5 +85,11 @@ if (isset($message)) echo $message;
     </table>
 </div>
 
+<?php
+if ($Paging->enabled()) {
+    echo $HTML->paging($Paging);
+}
+?>
+
 <?php endif; ?>
 <?php echo $HTML->main_panel_end(); ?>

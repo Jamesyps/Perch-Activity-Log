@@ -93,7 +93,8 @@ class JwActivityLog_Action extends PerchAPI_Base
     }
 
     /**
-     * Fetch previous
+     * Fetch related logs that have occurred before
+     * the current one
      *
      * @return array
      */
