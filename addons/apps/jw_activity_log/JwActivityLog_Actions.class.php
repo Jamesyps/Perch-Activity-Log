@@ -1,4 +1,4 @@
-<?php
+<?php include_once('JwActivityLog_EventIconsTrait.php');
 
 /**
  * Class JwActivityLog_Actions
@@ -7,6 +7,8 @@
  */
 class JwActivityLog_Actions extends PerchAPI_Factory
 {
+    use EventIcons;
+
     /**
      * Log Table
      *

@@ -1,4 +1,4 @@
-<?php
+<?php include_once('JwActivityLog_EventIconsTrait.php');
 
 /**
  * Class JwActivityLog_Action
@@ -7,6 +7,8 @@
  */
 class JwActivityLog_Action extends PerchAPI_Base
 {
+    use EventIcons;
+
     /**
      * Log Table
      *
@@ -20,49 +22,6 @@ class JwActivityLog_Action extends PerchAPI_Base
      * @var string
      */
     protected $pk = 'actionID';
-
-    /**
-     * Directory for icon files
-     *
-     * @var string
-     */
-    const ICON_DIR = 'assets/icons';
-
-    /**
-     * Icon file type
-     *
-     * @var string
-     */
-    const ICON_EXT = '.png';
-
-    /**
-     * Map event keys to file names
-     *
-     * @var array
-     */
-    private $iconMap = array(
-        'region.create'       => 'region_create',
-        'region.add_item'     => 'region_add_item',
-        'region.publish'      => 'region_publish',
-        'item.delete'         => 'item_delete',
-        'category.create'     => 'category_create',
-        'category.update'     => 'category_update',
-        'assets.create_image' => 'assets_create_image'
-    );
-
-    /**
-     * Return icon for event type or default if none exists
-     *
-     * @return string
-     */
-    public function icon()
-    {
-        if(!isset($this->iconMap[$this->actionKey()])) {
-            return PerchUtil::file_path($this->api->app_path() . '/' . self::ICON_DIR . '/' . 'generic' . self::ICON_EXT);
-        }
-
-        return PerchUtil::file_path($this->api->app_path() . '/' . self::ICON_DIR . '/' . $this->iconMap[$this->actionKey()] . self::ICON_EXT);
-    }
 
     /**
      * Format action key name for users

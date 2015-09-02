@@ -1,9 +1,8 @@
 <?php
 
-if(!class_exists('JwActivityLog_Actions')) {
-    include('JwActivityLog_Actions.class.php');
-    include('JwActivityLog_Action.class.php');
-}
+include_once('JwActivityLog_Actions.class.php');
+include_once('JwActivityLog_Action.class.php');
+
 
 $API = new PerchAPI(1.0, 'jw_activity_log');
 $Actions = new JwActivityLog_Actions($API);
