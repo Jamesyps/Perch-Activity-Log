@@ -73,4 +73,22 @@ class JwActivityLog_Actions extends PerchAPI_Factory
 
         return parent::create($data);
     }
+
+    public function get_stored_users_unique()
+    {
+        $return = array();
+
+        $sql = "SELECT `userAccountData` FROM " . $this->table . " GROUP BY `userAccountID` ORDER BY `actionDateTime` DESC";
+        $results = $this->db->get_rows($sql);
+
+        if(PerchUtil::count($results))
+        {
+            foreach($results as $row)
+            {
+                $return[] = PerchUtil::json_safe_decode($row['userAccountData'], true);
+            }
+        }
+
+        return $return;
+    }
 }

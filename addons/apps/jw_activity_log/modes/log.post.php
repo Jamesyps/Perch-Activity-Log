@@ -30,6 +30,15 @@ if (isset($message)) echo $message;
                 </li>
             <?php endforeach; ?>
         <?php endif; ?>
+
+        <?php if(PerchUtil::count($filter_users)): ?>
+        <li class="fin user-filter">
+            <form action="./" method="GET">
+                <?php echo $Form->select_field('user', 'User', $filter_users_opts, isset($userID) ? $userID : false); ?>
+                <button type="submit"><?php echo $Lang->get('Go'); ?></button>
+            </form>
+        </li>
+        <?php endif; ?>
     </ul>
 
     <table class="d log-table">

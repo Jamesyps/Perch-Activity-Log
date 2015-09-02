@@ -30,5 +30,6 @@
     "Category": "Category",
     "Item": "Item",
     "Asset": "Asset",
-    "There has not yet been any activity": "There has not yet been any activity"
+    "There has not yet been any activity": "There has not yet been any activity",
+    "Go": "Go"
 }
