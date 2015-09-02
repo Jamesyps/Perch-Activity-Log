@@ -22,13 +22,11 @@ if (isset($message)) echo $message;
     <li class="selected"><a href="<?php echo PerchUtil::html($API->app_path()); ?>"><?php echo $Lang->get('All'); ?></a></li>
 </ul>
 
-<div class="jw-action-log">
+<div class="jw-activity-log">
     <table class="d log-table">
         <thead>
             <tr>
-                <th class="icon">
-                    -
-                </th>
+                <th class="icon">&nbsp;</th>
                 <th>
                     <?php echo $Lang->get('Action'); ?>
                 </th>

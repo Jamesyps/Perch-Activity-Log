@@ -15,6 +15,7 @@ $Lang = $API->get('Lang');
 
 // Page Meta
 $Perch->page_title = $Lang->get('Activity Log');
+$Perch->add_css($API->app_path() . '/assets/css/log.css');
 
 // Page Initialising
 include('modes/log.pre.php');

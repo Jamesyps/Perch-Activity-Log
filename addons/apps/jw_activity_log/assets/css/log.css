@@ -1,0 +1,17 @@
+.jw-activity-log {
+
+}
+
+.jw-activity-log .log-table {
+
+}
+
+.jw-activity-log .log-table .icon {
+    width: 16px;
+    padding-right: 0;
+}
+
+.jw-activity-log .log-table .icon img {
+    display: inline-block;
+    vertical-align: bottom;
+}
