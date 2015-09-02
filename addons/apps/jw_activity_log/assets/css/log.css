@@ -6,6 +6,10 @@
 
 }
 
+.jw-activity-log .filter-icon a:link {
+    padding: 8px 12px;
+}
+
 .jw-activity-log .log-table .icon {
     width: 16px;
     padding-right: 0;

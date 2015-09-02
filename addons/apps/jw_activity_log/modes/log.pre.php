@@ -7,11 +7,27 @@ $Paging->set_per_page(15);
 
 $Actions = new JwActivityLog_Actions($API);
 
-$action_logs = array();
-$action_logs = $Actions->all($Paging);
-
 $filter_icons = array();
 $filter_icons = $Actions->icons();
+
+$action_logs = array();
+$filter = '*';
+
+if(isset($_GET['type']) && $_GET['type']) {
+    $filter = 'type';
+    $type = $_GET['type'];
+}
+
+switch($filter)
+{
+    case 'type':
+        $action_logs = $Actions->get_by('actionKey', $type, false, $Paging);
+        break;
+    default:
+        $action_logs = $Actions->all($Paging);
+        break;
+}
+
 
 // Install App
 if($action_logs == false) {

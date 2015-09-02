@@ -17,12 +17,21 @@ if (isset($message)) echo $message;
 ?>
 
 <?php if(PerchUtil::count($action_logs)): ?>
-
-<ul class="smartbar">
-    <li class="selected"><a href="<?php echo PerchUtil::html($API->app_path()); ?>"><?php echo $Lang->get('All'); ?></a></li>
-</ul>
-
 <div class="jw-activity-log">
+    <ul class="smartbar">
+        <li class="<?php if($filter == '*'): ?>selected<?php endif; ?>"><a href="<?php echo PerchUtil::html($API->app_path()); ?>"><?php echo $Lang->get('All'); ?></a></li>
+
+        <?php if(PerchUtil::count($filter_icons)): ?>
+            <?php foreach($filter_icons as $event => $filename): ?>
+                <li class="filter-icon <?php if(isset($type) && $type == $event): ?>selected<?php endif; ?>">
+                    <a href="?type=<?php echo $HTML->encode($event); ?>">
+                        <img src="<?php echo $filename; ?>" alt="<?php echo $HTML->encode($event); ?>" />
+                    </a>
+                </li>
+            <?php endforeach; ?>
+        <?php endif; ?>
+    </ul>
+
     <table class="d log-table">
         <thead>
             <tr>

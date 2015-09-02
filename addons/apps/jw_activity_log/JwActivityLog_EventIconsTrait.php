@@ -21,7 +21,6 @@ trait EventIcons {
      * @var array
      */
     private $iconMap = array(
-        'region.create'       => 'region_create',
         'region.add_item'     => 'region_add_item',
         'region.publish'      => 'region_publish',
         'item.delete'         => 'item_delete',
@@ -55,9 +54,9 @@ trait EventIcons {
     {
         $return = array();
 
-        foreach($this->iconMap as $filename)
+        foreach($this->iconMap as $event => $filename)
         {
-            $return[] = PerchUtil::file_path($this->api->app_path() . '/' . $this->icon_dir . '/' . $filename . $this->icon_ext);
+            $return[$event] = PerchUtil::file_path($this->api->app_path() . '/' . $this->icon_dir . '/' . $filename . $this->icon_ext);
         }
 
         return $return;

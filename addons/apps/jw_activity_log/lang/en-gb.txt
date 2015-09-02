@@ -29,5 +29,6 @@
     "URL": "URL",
     "Category": "Category",
     "Item": "Item",
-    "Asset": "Asset"
+    "Asset": "Asset",
+    "There has not yet been any activity": "There has not yet been any activity"
 }
