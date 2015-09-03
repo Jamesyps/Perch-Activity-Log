@@ -32,7 +32,10 @@ if (isset($_GET['id']) && $_GET['id'] != '') {
         'userCreated',
         'userUpdated',
         'roleID',
-        'roleSlug'
+        'roleSlug',
+        'userEnabled',
+        'userMasterAdmin',
+        'roleMasterAdmin'
     ));
 
     $heading1 = 'View Log #' . $actionID;

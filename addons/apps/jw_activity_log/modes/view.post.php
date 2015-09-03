@@ -33,9 +33,9 @@ if (isset($message)) {
         <tbody>
             <tr>
                 <?php foreach ($user as $userProperty): ?>
-                    <th>
+                    <td>
                         <?php echo $HTML->encode($userProperty); ?>
-                    </th>
+                    </td>
                 <?php endforeach; ?>
             </tr>
         </tbody>
@@ -50,7 +50,7 @@ if (isset($message)) {
                     <?php echo $Lang->get('Title'); ?>
                 </th>
                 <th>
-                    <?php echo $Lang->get('URL'); ?>
+                    <?php echo $Lang->get('Location'); ?>
                 </th>
             </tr>
         </thead>
