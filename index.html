@@ -1,0 +1,28 @@
+---
+layout: default
+---
+<div class="page-navigation">
+    <h2 class="page-navigation-title">
+        Contents
+    </h2>
+    <ul class="section-list">
+        {% for post in site.posts %}
+        <li>
+            <a href="#{{ post.title | slugify }}">{{ post.title }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div class="page-sections">
+    {% for post in site.posts %}
+    <article id="{{ post.title | slugify }}" class="section">
+        <header class="section-title">
+            <h1>{{ post.title }}</h1>
+        </header>
+        <div class="section-content">
+            {{ post.content }}
+        </div>
+    </article>
+    {% endfor %}
+</div>

@@ -1,0 +1,77 @@
+<head itemscope itemtype="http://schema.org/WebPage" lang="en">
+    <meta charset="utf-8">
+
+    <!-- Basic Info -->
+    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta name="description" content="{{ site.description }}">
+    <meta name="keywords" content="{{ site.keywords }}" />
+    <!-- ./Basic Info -->
+
+    <!-- Schema.org -->
+    <meta itemprop="name" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+    <meta itemprop="description" content="{{ site.description }}">
+    <meta itemprop="image" content="images/meta-logo.png">
+    <!-- ./Schema.org -->
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    {% if site.twitter %}
+    <meta name="twitter:site" content="{{ site.twitter }}">
+    {% endif %}
+
+    <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
+    <meta name="twitter:description" content="{{ site.description }}" />
+
+    <meta name="twitter:url" content="{{ site.url }}" />
+    <meta name="twitter:image" content="images/meta-logo.png" />
+    <!-- ./Twitter -->
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="{{ site.title }}" />
+
+    <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
+    <meta property="og:description" content="{{ site.description }}" />
+
+    <meta property="og:url" content="{{ site.url }}" />
+    <meta property="og:image" content="images/meta-logo.png" />
+    <!-- ./Open Graph -->
+
+    <!-- Crawlers -->
+    <meta name="robots" content="all" />
+    <meta name="rating" content="general" />
+    <meta name="revisit-after" content="1 Month" />
+    <!-- ./Crawlers -->
+
+    <!-- Devices -->
+    <meta name="application-name" content="{{ site.title }}" />
+    <meta name="theme-color" content="{{ site.android_accent }}">
+
+    <link rel="apple-touch-icon-precomposed" href=images/touch-icon.png" />
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <link rel="icon" sizes="152x152" href="images/touch-icon.png">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <!-- ./Devices -->
+
+
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+
+    {% if site.google_analytics %}
+    <!-- Analytics -->
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', '{{ site.google_analytics }}']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <!-- ./Analytics -->
+    {% endif %}
+</head>

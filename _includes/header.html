@@ -1,0 +1,19 @@
+<header class="site-header">
+    <div class="wrapper">
+
+        <div class="project-meta">
+            <h1 class="project-title">{{ site.title }}</h1>
+            <p class="project-summary">{{ site.description }}</p>
+
+            <div class="button-row">
+                <a class="project-download" href="{{ site.download_link }}">Download</a>
+                <a class="project-src" href="{{ site.github.repository_url }}">View on Github</a>
+            </div>
+        </div>
+
+    </div>
+</header>
+
+<div class="project-hero">
+    <img src="{{ site.hero_image | prepend: site.baseurl }}" alt="{{ site.title }}" />
+</div>

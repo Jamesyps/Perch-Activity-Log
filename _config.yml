@@ -1,0 +1,34 @@
+# Site Meta Data
+title: Perch Log
+author: James Wigger
+description: "An event based activity log for the Perch CMS. Useful for keeping track which content editors have published changes and viewing the historical differences."
+keywords:
+
+# Sharing Options
+twitter: "@jamesyps"
+android_accent: "#5540A0"
+google_analytics: "UA-2001719-7"
+
+# Site Config
+baseurl: ""
+url: "http://jamesyps.github.io/perch-activity-log"
+
+# Theme Settings
+hero_image: "images/log-index.png"
+homepage: "http://jameswigger.co.uk"
+download_link: "https://github.com/Jamesyps/Perch-Activity-Log/archive/1.0.0.zip"
+
+
+# Build settings
+markdown: redcarpet
+redcarpet:
+  extensions: ['smart', 'tables', 'with_toc_data']
+
+permalink: none
+
+sass:
+  style: :compressed
+  compressed: true
+
+gems:
+  - jekyll-sitemap

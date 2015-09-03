@@ -1,0 +1,305 @@
+// Global
+%clearfix {
+    &:after {
+        display: block;
+        clear: both;
+        visibility: hidden;
+        height: 0;
+        font-size: 0;
+        content: ' ';
+    }
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: $body-colour;
+    font-family: $font-stack;
+}
+
+.wrapper {
+    overflow: auto;
+
+    position: relative;
+    margin: 0 auto;
+
+    width: 90%;
+    max-width: 990px;
+}
+
+// Banner
+.site-header {
+    background: $primary-colour;
+    background: -moz-linear-gradient(-45deg,  $primary-colour 0%, $primary-colour-dark 100%);
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,$primary-colour), color-stop(100%,$primary-colour-dark));
+    background: -webkit-linear-gradient(-45deg,  $primary-colour 0%,$primary-colour-dark 100%);
+    background: -o-linear-gradient(-45deg,  $primary-colour 0%,$primary-colour-dark 100%);
+    background: -ms-linear-gradient(-45deg,  $primary-colour 0%,$primary-colour-dark 100%);
+    background: linear-gradient(135deg,  $primary-colour 0%,$primary-colour-dark 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$primary-colour}', endColorstr='#{$primary-colour-dark}',GradientType=1 );
+
+    padding: 50px 0 300px;
+
+    text-align: center;
+    text-shadow: 2px 2px 1px rgba(#000, 0.15);
+    color: #FFF;
+}
+
+.project-meta {
+    margin: 0 auto;
+    width: 475px;
+}
+
+.project-title {
+    margin: 0;
+    padding: 0;
+
+    font-size: 6em;
+    font-style: italic;
+    font-weight: 300;
+
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.project-summary {
+    margin-top: 10px;
+    margin-bottom: 40px;
+    font-size: 1.6em;
+    line-height: 1.6em;
+    font-weight: 500;
+}
+
+%btn {
+    display: inline-block;
+    padding: 10px 40px;
+    text-decoration: none;
+    font-size: 1.8em;
+    font-weight: 500;
+    color: #FFF;
+}
+
+.project-download {
+    @extend %btn;
+
+    border-radius: 2px;
+
+    background: $secondary-colour;
+    background: -moz-linear-gradient(top,  $secondary-colour 0%, $secondary-colour-dark 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$secondary-colour), color-stop(100%,$secondary-colour-dark));
+    background: -webkit-linear-gradient(top,  $secondary-colour 0%,$secondary-colour-dark 100%);
+    background: -o-linear-gradient(top,  $secondary-colour 0%,$secondary-colour-dark 100%);
+    background: -ms-linear-gradient(top,  $secondary-colour 0%,$secondary-colour-dark 100%);
+    background: linear-gradient(to bottom,  $secondary-colour 0%,$secondary-colour-dark 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$secondary-colour', endColorstr='$secondary-colour-dark',GradientType=0 );
+
+    letter-spacing: 1px;
+
+    &:hover {
+        background: $secondary-colour-dark;
+    }
+}
+
+.project-src {
+    @extend %btn;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+@media all and (max-width: 720px) {
+    .project-meta {
+        width: 100%;
+    }
+
+    .project-title {
+        font-size: 4em;
+    }
+
+    .project-download,
+    .project-src {
+        display: block;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+    }
+
+    .project-src {
+        margin-top: 20px;
+    }
+}
+
+.project-hero {
+    margin: -240px auto 50px;
+    overflow: hidden;
+
+    border-radius: 3px;
+    box-shadow: 0 2px 3px rgba(#000, 0.2);
+    background: url('../images/browser-frame.png') no-repeat top left;
+
+    padding-top: 31px;
+    max-width: 990px;
+    width: 90%;
+
+    img {
+        display: block;
+        width: 100%;
+    }
+}
+
+@media all and (max-width: 720px) {
+    .project-hero {
+        margin-top: -260px;
+    }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.3),
+       only screen and (min--moz-device-pixel-ratio: 1.3),
+       only screen and (-webkit-min-device-pixel-ratio: 1.3020833333333333),
+       only screen and (min-resolution: 125dpi), only screen and (min-resolution: 1.3dppx) {
+
+    .project-hero {
+        background-image: url('../images/browser-frame@2x.png');
+        background-size: 990px 31px;
+    }
+}
+
+
+// Page content
+.page-navigation {
+    float: left;
+    width: 25%;
+
+    .page-navigation-title {
+        margin: 0 0 20px;
+        padding: 0;
+
+        font-size: 2.4em;
+        line-height: 1em;
+        font-weight: 700;
+
+        color: $header-colour;
+    }
+
+    .section-list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    li {
+        margin-bottom: 5px;
+    }
+
+    a {
+        font-size: 1.6em;
+        line-height: 1.8em;
+        text-decoration: none;
+        color: $copy-colour;
+
+        &:hover {
+            color: $header-colour;
+        }
+    }
+}
+
+.page-sections {
+    float: left;
+    margin-left: 5%;
+    width: 70%;
+
+    .section {
+        margin-bottom: 40px;
+        border-top: 1px solid darken($body-colour, 5%);
+        padding-top: 40px;
+
+        &:first-child {
+            border-top: 0;
+            padding-top: 0;
+        }
+    }
+
+    .section-title h1 {
+        margin: 0 0 20px;
+        padding: 0;
+
+        font-size: 2.4em;
+        line-height: 1em;
+        font-weight: 700;
+
+        color: $header-colour;
+    }
+
+    .section-content {
+        font-size: 1.6em;
+        line-height: 1.6em;
+        color: $copy-colour;
+
+        h1, h2, h3, h4, h5, h6 {
+            margin: 0 0 15px;
+            padding: 0;
+        }
+
+        a {
+            color: $copy-colour;
+            text-decoration: underline;
+
+            &:hover {
+                color: $header-colour;
+            }
+        }
+    }
+}
+
+@media all and (max-width: 720px) {
+    .page-navigation,
+    .page-sections {
+        float: none;
+        margin: 0;
+        width: auto;
+    }
+
+    .page-sections {
+        margin-top: 30px;
+    }
+}
+
+// footer
+.site-footer {
+    border-top: 1px solid darken($body-colour, 5%);
+    background: #FFF;
+    padding: 30px 0;
+    text-align: center;
+
+    .wrapper {
+        overflow: hidden;
+    }
+
+    .homepage {
+        font-size: 1.3em;
+        line-height: 1em;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: $header-colour;
+
+        &:hover {
+            color: $secondary-colour;
+        }
+    }
+
+    .credit {
+        display: block;
+        margin-top: 10px;
+        font-size: 1.2em;
+        line-height: 1em;
+
+        color: darken($body-colour, 20%);
+
+        a {
+            color: darken($body-colour, 20%);
+        }
+    }
+}

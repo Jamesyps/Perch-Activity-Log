@@ -1,0 +1,23 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+// Variables
+$primary-colour: #563DA3 !default;
+$primary-colour-dark: #21266B !default;
+
+$secondary-colour: #FDB355 !default;
+$secondary-colour-dark: #FD6F49 !default;
+
+$body-colour: #EDFBFF !default;
+$copy-colour: #393A49 !default;
+$header-colour: $primary-colour-dark !default;
+
+$font-stack: 'Lato', sans-serif !default;
+
+// Reset
+@import 'normalize';
+@import 'typography';
+@import 'layout';
+@import 'syntax-highlighting';
