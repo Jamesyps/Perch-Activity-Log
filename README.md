@@ -1,3 +1,9 @@
+# Looking for Perch 3?
+
+This app has been redeveloped to take advantage of the new APIs and user interface of Perch 3. Please find the new repository here: [https://github.com/RedFinch/Perch-Event-Log](https://github.com/RedFinch/Perch-Event-Log).
+
+This app will no longer be receieving updates.
+
 # Perch Activity Log
 An event based activity log for the Perch CMS. Useful for keeping track which content editors have published changes and viewing the historical differences.
 
